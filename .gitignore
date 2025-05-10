@@ -1,0 +1,33 @@
+# Environment & secrets
+.env
+.env.local
+.env.production
+service-account*.json
+*credentials*.json
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+.next/
+out/
+build/
+.vercel
+
+# OS
+.DS_Store
+*.pem
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+npm-debug.log*

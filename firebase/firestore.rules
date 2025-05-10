@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users collection - global
+    match /users/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false; // Server-side only
+    }
+
+    // Companies and nested collections
+    match /companies/{companyId}/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if false; // Server-side only
+    }
+  }
+}
